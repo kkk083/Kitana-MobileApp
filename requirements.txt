@@ -1,0 +1,23 @@
+# ============================================================================
+# Dépendances Python pour l'API d'authentification Kintana Project
+# ============================================================================
+
+# Framework Web
+Flask==3.0.0
+flask-cors==4.0.0
+
+# Base de données PostgreSQL
+psycopg2-binary==2.9.9
+
+# Sécurité et authentification
+bcrypt==4.1.2
+PyJWT==2.8.0
+
+# Variables d'environnement
+python-dotenv==1.0.0
+
+# Serveur WSGI pour la production
+gunicorn==21.2.0
+
+# Utilitaires
+python-dateutil==2.8.2
