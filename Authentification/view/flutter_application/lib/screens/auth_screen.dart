@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/theme_constants.dart';
 import '../widgets/kintana_widgets.dart';
 import '../widgets/custom_snackbar.dart';
@@ -84,7 +85,24 @@ class _AuthScreenState extends State<AuthScreen> {
         _confirmPasswordController.clear();
         setState(() => _isLogin = true);
       } else {
-        // Navigate to Home
+        // ✨ NOUVELLE PARTIE : Navigation vers le chatbot après connexion réussie
+        final prefs = await SharedPreferences.getInstance();
+        
+        // Sauvegarder le token et les infos utilisateur
+        if (result['data'] != null && result['data']['token'] != null) {
+          await prefs.setString('auth_token', result['data']['token']);
+        } else {
+          // Si pas de token dans la réponse, on en crée un temporaire
+          await prefs.setString('auth_token', 'logged_in');
+        }
+        
+        // Sauvegarder l'email ou le nom de l'utilisateur
+        await prefs.setString('username', _emailController.text.split('@')[0]);
+        
+        if (!mounted) return;
+        
+        // Navigation vers le chatbot
+        Navigator.pushReplacementNamed(context, '/chat');
       }
     } else {
       CustomSnackbar.error(context, result['message']);

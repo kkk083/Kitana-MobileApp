@@ -19,7 +19,7 @@ class DatabaseConfig:
     DB_PORT = os.getenv('DB_PORT', '5432')
     DB_NAME = os.getenv('DB_NAME', 'kintana_project_GL')
     DB_USER = os.getenv('DB_USER', 'postgres')
-    DB_PASSWORD = os.getenv('DB_PASSWORD', 'p@ssw0rd232430@l!')
+    DB_PASSWORD = os.getenv('DB_PASSWORD', 'admin123')
     
     # Pool de connexions
     MIN_CONNECTIONS = 1
