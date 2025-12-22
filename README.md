@@ -1,6 +1,6 @@
 # 🌟 KINTANA - Application Mobile
 
-**KINTANA** est une application mobile éducative sur l'endométriose, combinant un système d'authentification sécurisé et un chatbot intelligent propulsé par l'IA.
+**KINTANA** est une application mobile éducative sur les menstruations, combinant un système d'authentification sécurisé et un chatbot intelligent propulsé par l'IA.
 
 > *"Car nous sommes tous enfants des étoiles"*
 
